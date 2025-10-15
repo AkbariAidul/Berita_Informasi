@@ -34,6 +34,6 @@ class ArticleNews extends Model
 
     public function author(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'author_id');
+        return $this->belongsTo(Author::class, 'author_id');
     }
 }
