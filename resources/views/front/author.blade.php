@@ -75,3 +75,7 @@
 </body>
 
 @endsection
+
+@push ('after-scripts')
+    <script src="https://cdn.tailwindcss.com"></script>
+@endpush

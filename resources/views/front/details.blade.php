@@ -2,6 +2,7 @@
 @section ('content')
 
     <body class="font-[Poppins]">
+		
 	<x-navbar />
 
 		<nav id="Category" class="max-w-[1130px] mx-auto flex justify-center items-center gap-4 mt-[30px]">
@@ -15,57 +16,7 @@
                 </a>
             @endforeach
 	</nav>  
-	<nav id="Category" class="max-w-[1130px] mx-auto flex justify-center items-center gap-4 mt-[30px]">
-		<a href="categoryPage.html"
-			class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">
-			<div class="w-6 h-6 flex shrink-0">
-				<img src="assets/images/icons/heart.svg" alt="icon" />
-			</div>
-			<span>Health</span>
-		</a>
-		<a href="categoryPage.html"
-			class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">
-			<div class="w-6 h-6 flex shrink-0">
-				<img src="assets/images/icons/status-up.svg" alt="icon" />
-			</div>
-			<span>Business</span>
-		</a>
-		<a href="categoryPage.html"
-			class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">
-			<div class="w-6 h-6 flex shrink-0">
-				<img src="assets/images/icons/car.svg" alt="icon" />
-			</div>
-			<span>Automotive</span>
-		</a>
-		<a href="categoryPage.html"
-			class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">
-			<div class="w-6 h-6 flex shrink-0">
-				<img src="assets/images/icons/global.svg" alt="icon" />
-			</div>
-			<span>Entertainment</span>
-		</a>
-		<a href="categoryPage.html"
-			class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">
-			<div class="w-6 h-6 flex shrink-0">
-				<img src="assets/images/icons/coffee.svg" alt="icon" />
-			</div>
-			<span>Foods</span>
-		</a>
-		<a href="categoryPage.html"
-			class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">
-			<div class="w-6 h-6 flex shrink-0">
-				<img src="assets/images/icons/courthouse.svg" alt="icon" />
-			</div>
-			<span>Politic</span>
-		</a>
-		<a href="categoryPage.html"
-			class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">
-			<div class="w-6 h-6 flex shrink-0">
-				<img src="assets/images/icons/cup.svg" alt="icon" />
-			</div>
-			<span>Sport</span>
-		</a>
-	</nav>
+	
 	<header class="flex flex-col items-center gap-[50px] mt-[70px]">
 		<div id="Headline" class="max-w-[1130px] mx-auto flex flex-col gap-4 items-center">
 			<p class="w-fit text-[#A3A6AE]">{{ $articleNews -> created_at -> format ('M d, Y')}} • {{ $articleNews -> category -> name }}</p>
@@ -91,19 +42,19 @@
 				<div id="Rating" class="flex items-center gap-1">
 					<div class="flex items-center">
 						<div class="w-4 h-4 flex shrink-0">
-							<img src="assets/images/icons/Star 1.svg" alt="star">
+							<img src="{{asset('assets/images/icons/Star 1.svg')}}" alt="star">
 						</div>
 						<div class="w-4 h-4 flex shrink-0">
-							<img src="assets/images/icons/Star 1.svg" alt="star">
+							<img src="{{asset('assets/images/icons/Star 1.svg')}}" alt="star">
 						</div>
 						<div class="w-4 h-4 flex shrink-0">
-							<img src="assets/images/icons/Star 1.svg" alt="star">
+							<img src="{{asset('assets/images/icons/Star 1.svg')}}" alt="star">
 						</div>
 						<div class="w-4 h-4 flex shrink-0">
-							<img src="assets/images/icons/Star 1.svg" alt="star">
+							<img src="{{asset('assets/images/icons/Star 1.svg')}}" alt="star">
 						</div>
 						<div class="w-4 h-4 flex shrink-0">
-							<img src="assets/images/icons/Star 1.svg" alt="star">
+							<img src="{{asset('assets/images/icons/Star 1.svg')}}" alt="star">
 						</div>
 					</div>
 					<p class="font-semibold text-xs leading-[18px]">(12,490)</p>
@@ -120,77 +71,62 @@
 		</article>
 		<div class="side-bar flex flex-col w-[300px] shrink-0 gap-10">
 			<div class="ads flex flex-col gap-3 w-full">
-				<a href="">
-					<img src="assets/images/iklans/banner.png" class="object-contain w-full h-full" alt="ads" />
+				<a href="{{$square_ads_1 -> link}}">
+					<img src="{{ Storage::url ($square_ads_1 -> thumbnail)}}" class="object-contain w-full h-full" alt="ads" />
 				</a>
 				<p class="font-medium text-sm leading-[21px] text-[#A3A6AE] flex gap-1">
-					Our Advertisement <a href="#" class="w-[18px] h-[18px]"><img
-							src="assets/images/icons/message-question.svg" alt="icon" /></a>
+					Our Advertisement <a href="#" class="w-[18px] h-[18px]">
+						<img src="{{asset('assets/images/icons/message-question.svg')}}" alt="icon" />
+					</a>
 				</p>
 			</div>
 			<div id="More-from-author" class="flex flex-col gap-4">
 				<p class="font-bold">More From Author</p>
-				<a href="" class="card-from-author">
-					<div
-						class="rounded-[20px] ring-1 ring-[#EEF0F7] p-[14px] flex gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300">
-						<div class="w-[70px] h-[70px] flex shrink-0 overflow-hidden rounded-2xl">
-							<img src="assets/images/thumbnails/th-demonstration.png" class="object-cover w-full h-full"
-								alt="thumbnail">
+
+				@forelse ($author_news  as $item_news)
+					<a href="{{ route ('front.details', $item_news -> slug) }}l" class="card-from-author">
+						<div
+							class="rounded-[20px] ring-1 ring-[#EEF0F7] p-[14px] flex gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300">
+							<div class="w-[70px] h-[70px] flex shrink-0 overflow-hidden rounded-2xl">
+								<img src="Storage::url ($item_news -> thumbnail)" class="object-cover w-full h-full"
+									alt="thumbnail">
+							</div>
+							<div class="flex flex-col gap-[6px]">
+								<p class="line-clamp-2 font-bold">
+									{{ substr($item_news->name, 0, 50) }}
+                                    {{ strlen($item_news->name) > 50 ? '...' : '' }}
+								</p>
+								<p class="text-xs leading-[18px] text-[#A3A6AE]">{{ $item_news -> created_at -> format ('M d, Y') }} • {{ $item_news -> category -> name }}</p>
+							</div>
 						</div>
-						<div class="flex flex-col gap-[6px]">
-							<p class="line-clamp-2 font-bold">Gaya pakaian pernikahan artis Lorem, ipsum dolor.</p>
-							<p class="text-xs leading-[18px] text-[#A3A6AE]">12 Jun, 2024 • Entertainment</p>
-						</div>
-					</div>
-				</a>
-				<a href="" class="card-from-author">
-					<div
-						class="rounded-[20px] ring-1 ring-[#EEF0F7] p-[14px] flex gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300">
-						<div class="w-[70px] h-[70px] flex shrink-0 overflow-hidden rounded-2xl">
-							<img src="assets/images/thumbnails/th-cyclist.png" class="object-cover w-full h-full"
-								alt="thumbnail">
-						</div>
-						<div class="flex flex-col gap-[6px]">
-							<p class="line-clamp-2 font-bold">Gaya pakaian pernikahan artis Lorem, ipsum dolor.</p>
-							<p class="text-xs leading-[18px] text-[#A3A6AE]">12 Jun, 2024 • Entertainment</p>
-						</div>
-					</div>
-				</a>
-				<a href="" class="card-from-author">
-					<div
-						class="rounded-[20px] ring-1 ring-[#EEF0F7] p-[14px] flex gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300">
-						<div class="w-[70px] h-[70px] flex shrink-0 overflow-hidden rounded-2xl">
-							<img src="assets/images/thumbnails/model.png" class="object-cover w-full h-full"
-								alt="thumbnail">
-						</div>
-						<div class="flex flex-col gap-[6px]">
-							<p class="line-clamp-2 font-bold">Gaya pakaian pernikahan artis Lorem, ipsum dolor.</p>
-							<p class="text-xs leading-[18px] text-[#A3A6AE]">12 Jun, 2024 • Entertainment</p>
-						</div>
-					</div>
-				</a>
+					</a>
+				@empty
+					<p>
+						Belum ada artikel dari penulis ini.
+					</p>
+				@endforelse
 			</div>
 			<div class="ads flex flex-col gap-3 w-full">
-				<a href="">
-					<img src="assets/images/iklans/banner1.png" class="object-contain w-full h-full" alt="ads" />
+				<a href="{{$square_ads_2 -> link}}">
+					<img src="{{ Storage::url ($square_ads_2 -> thumbnail) }}" class="object-contain w-full h-full" alt="ads" />
 				</a>
 				<p class="font-medium text-sm leading-[21px] text-[#A3A6AE] flex gap-1">
 					Our Advertisement <a href="#" class="w-[18px] h-[18px]"><img
-							src="assets/images/icons/message-question.svg" alt="icon" /></a>
+							src="{{asset('assets/images/icons/message-question.svg')}}" alt="icon" /></a>
 				</p>
 			</div>
 		</div>
 	</section>
 	<section id="Advertisement" class="max-w-[1130px] mx-auto flex justify-center mt-[70px]">
 		<div class="flex flex-col gap-3 shrink-0 w-fit">
-			<a href="#">
+			<a href="{{$bannerads -> link}}">
 				<div class="w-[900px] h-[120px] flex shrink-0 border border-[#EEF0F7] rounded-2xl overflow-hidden">
-					<img src="assets/images/iklans/bannerWide.png" class="object-cover w-full h-full" alt="ads" />
+					<img src="{{ Storage::url ($bannerads -> thumbnail) }}" class="object-cover w-full h-full" alt="ads" />
 				</div>
 			</a>
 			<p class="font-medium text-sm leading-[21px] text-[#A3A6AE] flex gap-1">
 				Our Advertisement <a href="#" class="w-[18px] h-[18px]"><img
-						src="assets/images/icons/message-question.svg" alt="icon" /></a>
+						src="{{asset('assets/images/icons/message-question.svg')}}" alt="icon" /></a>
 			</p>
 		</div>
 	</section>
@@ -203,60 +139,33 @@
 				</h2>
 			</div>
 			<div class="grid grid-cols-3 gap-[30px]">
-				<a href="details.html" class="card-news">
-					<div
-						class="rounded-[20px] ring-1 ring-[#EEF0F7] p-[26px_20px] flex flex-col gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300 bg-white">
-						<div
-							class="thumbnail-container w-full h-[200px] rounded-[20px] flex shrink-0 overflow-hidden relative">
-							<p
-								class="badge-white absolute top-5 left-5 rounded-full p-[8px_18px] bg-white font-bold text-xs leading-[18px]">
-								SPORT</p>
-							<img src="assets/images/thumbnails/th-cyclist.png" class="object-cover w-full h-full"
-								alt="thumbnail" />
-						</div>
-						<div class="card-info flex flex-col gap-[6px]">
-							<h3 class="font-bold text-lg leading-[27px]">Bersepeda dapat membuat diri menjadi lebih baik
-								lagi</h3>
-							<p class="text-sm leading-[21px] text-[#A3A6AE]">12 Jun, 2024</p>
-						</div>
-					</div>
-				</a>
-				<a href="details.html" class="card-news">
-					<div
-						class="rounded-[20px] ring-1 ring-[#EEF0F7] p-[26px_20px] flex flex-col gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300 bg-white">
-						<div
-							class="thumbnail-container w-full h-[200px] rounded-[20px] flex shrink-0 overflow-hidden relative">
-							<p
-								class="badge-white absolute top-5 left-5 rounded-full p-[8px_18px] bg-white font-bold text-xs leading-[18px]">
-								ENTERTAINMENT</p>
-							<img src="assets/images/thumbnails/camp.png" class="object-cover w-full h-full"
-								alt="thumbnail" />
-						</div>
-						<div class="card-info flex flex-col gap-[6px]">
-							<h3 class="font-bold text-lg leading-[27px]">Beberapa artis ini merayakan ultah di tengah
-								hutan raya</h3>
-							<p class="text-sm leading-[21px] text-[#A3A6AE]">12 Jun, 2024</p>
-						</div>
-					</div>
-				</a>
-				<a href="details.html" class="card-news">
-					<div
-						class="rounded-[20px] ring-1 ring-[#EEF0F7] p-[26px_20px] flex flex-col gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300 bg-white">
-						<div
-							class="thumbnail-container w-full h-[200px] rounded-[20px] flex shrink-0 overflow-hidden relative">
-							<p
-								class="badge-white absolute top-5 left-5 rounded-full p-[8px_18px] bg-white font-bold text-xs leading-[18px]">
-								POLITIC</p>
-							<img src="assets/images/thumbnails/th-demonstration.png" class="object-cover w-full h-full"
-								alt="thumbnail" />
-						</div>
-						<div class="card-info flex flex-col gap-[6px]">
-							<h3 class="font-bold text-lg leading-[27px]">Terjadi demo pada ibu kota jakarta membuat
-								macet parah</h3>
-							<p class="text-sm leading-[21px] text-[#A3A6AE]">12 Jun, 2024</p>
-						</div>
-					</div>
-				</a>
+                @forelse ($articles  as $article)
+                    <a href="{{ route ('front.details', $article -> slug) }}l" class="card">
+                    <div
+                        class="flex flex-col gap-4 p-[26px_20px] transition-all duration-300 ring-1 ring-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18] rounded-[20px] overflow-hidden bg-white">
+                        <div class="thumbnail-container h-[200px] relative rounded-[20px] overflow-hidden">
+                            <div
+                                class="badge absolute left-5 top-5 bottom-auto right-auto flex p-[8px_18px] bg-white rounded-[50px]">
+                                <p class="text-xs leading-[18px] font-bold uppercase">{{ $article -> category -> name }}</p>
+                            </div>
+                            <img src="{{ Storage::url($article -> thumbnail) }}" alt="thumbnail photo"
+                                class="w-full h-full object-cover" />
+                        </div>
+                        <div class="flex flex-col gap-[6px]">
+                            <h3 class="text-lg leading-[27px] font-bold">
+                                {{ $article -> name }}
+                            </h3>
+                            <p class="text-sm leading-[21px] text-[#A3A6AE]">
+                                {{ $article-> created_at -> format ('M d, Y') }}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                @empty
+                    <p>
+                        Belum ada artikel yang ditulis.
+                    </p>
+                @endforelse
 			</div>
 		</div>
 	</section>
@@ -274,4 +183,5 @@
     
 @push  ('after-scripts')
     <script src="js/two-lines-text.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 @endpush
