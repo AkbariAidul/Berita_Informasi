@@ -27,10 +27,11 @@
 				</div>
 			</div>
 		</div>
+        
 		<div id="content-cards" class="grid grid-cols-3 gap-[30px]">
 
             @forelse ($author -> news as $news)
-                <a href="{{ route ('front.details', $news -> slug) }}l" class="card">
+                <a href="{{ route ('front.details', $news -> slug) }}" class="card">
                     <div
                         class="flex flex-col gap-4 p-[26px_20px] transition-all duration-300 ring-1 ring-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18] rounded-[20px] overflow-hidden bg-white">
                         <div class="thumbnail-container h-[200px] relative rounded-[20px] overflow-hidden">
