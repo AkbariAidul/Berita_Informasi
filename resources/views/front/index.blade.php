@@ -1,10 +1,12 @@
 @extends('front.master')
+
 @section('content')
 <body class="font-[Poppins] pb-[72px]">
-		<x-navbar />
-		<nav id="Category" class="max-w-[1130px] mx-auto flex justify-center items-center gap-4 mt-[30px]">
 
-            @foreach($categories as $category)
+		<x-navbar />
+		
+		<nav id="Category" class="max-w-[1130px] mx-auto flex justify-center items-center gap-4 mt-[30px]">
+		 @foreach($categories as $category)
                 <a href="{{ route('front.category', $category->slug)}}" class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">
                     <div class="w-6 h-6 flex shrink-0">
                         <img src="{{Storage::url($category->icon)}}" alt="icon" />  
@@ -13,10 +15,10 @@
                 </a>
             @endforeach
 		</nav>
+
 		<section id="Featured" class="mt-[30px]">
 			<div class="main-carousel w-full">
-
-                @forelse($featured_articles as $article)
+				@forelse($featured_articles as $article)
                     <div class="featured-news-card relative w-full h-[550px] flex shrink-0 overflow-hidden">
                         <img src="{{ Storage::url($article->thumbnail) }}" class="thumbnail absolute w-full h-full object-cover" alt="icon" />
                         <div class="w-full h-full bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.9)] absolute z-10"></div>
@@ -46,10 +48,9 @@
                         Belum ada data terbaru...
                     </p>
                 @endforelse
-				
-
 			</div>
 		</section>
+
 		<section id="Up-to-date" class="max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-[70px]">
 			<div class="flex justify-between items-center">
 				<h2 class="font-bold text-[26px] leading-[39px]">
@@ -87,6 +88,7 @@
 				
 			</div>
 		</section>
+
 		<section id="Best-authors" class="max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-[70px]">
 			<div class="flex flex-col text-center gap-[14px] items-center">
 				<p class="badge-orange rounded-full p-[8px_18px] bg-[#FFECE1] font-bold text-sm leading-[21px] text-[#FF6B18] w-fit">BEST AUTHORS</p>
@@ -122,6 +124,7 @@
 
 			</div>
 		</section>
+
 		<section id="Advertisement" class="max-w-[1130px] mx-auto flex justify-center mt-[70px]">
 			<div class="flex flex-col gap-3 shrink-0 w-fit">
 				<a href="{{ $bannerads->link }}">
@@ -134,17 +137,15 @@
 				</p>
 			</div>
 		</section>
-		...
+			
 		<section id="Latest-entertainment" class="max-w-[1130px] mx-auto flex flex-col gap-[30px] mt-[70px]">
 			<div class="flex items-center justify-between">
 				<h2 class="font-bold text-[26px] leading-[39px]">
 					Latest For You <br />
 					in Entertainment
 				</h2>
-				<a href="{{ route('front.details', $article->slug)}}" class="font-bold text-4xl leading-[45px] text-white two-lines hover:underline transition-all duration-300">
-                                    {{ $article->name }}
-                                </a>
-			</div>d
+				
+			</div>
 			<div class="flex items-center justify-between h-fit">
 				<div class="featured-news-card relative w-full h-[424px] flex flex-1 rounded-[20px] overflow-hidden">
 					<img src="{{ Storage::url($entertainment_featured_articles->thumbnail) }}" class="absolute object-cover w-full h-full thumbnail" alt="icon" />
@@ -152,7 +153,7 @@
 					<div class="card-detail w-full flex items-end p-[30px] relative z-20">
 						<div class="flex flex-col gap-[10px]">
 							<p class="text-white">Featured</p>
-							<a href="details.html" class="font-bold text-[30px] leading-[36px] text-white hover:underline transition-all duration-300">
+							<a href="{{ route('front.details', $entertainment_featured_articles->slug)}}" class="font-bold text-[30px] leading-[36px] text-white hover:underline transition-all duration-300">
 									{{ $entertainment_featured_articles->name}}
 								</a>
 							<p class="text-white">
@@ -161,9 +162,9 @@
 						</div>
 					</div>
 				</div>
+
 				<div class="h-[424px] w-fit px-5 overflow-y-scroll overflow-x-hidden relative custom-scrollbar">
 					<div class="w-[455px] flex flex-col gap-5 shrink-0">
-
 							@forelse ($entertainment_articles as $article)
 								<a href="{{ route('front.details', $article->slug) }}" class="card py-[2px]">
 									<div class="rounded-[20px] border border-[#EEF0F7] p-[14px] flex items-center gap-4 hover:ring-2 hover:ring-[#FF6B18] transition-all duration-300">
