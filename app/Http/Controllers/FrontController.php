@@ -34,6 +34,7 @@ class FrontController extends Controller
             // ->take(1)
             ->first();
 
+            // Sectional Entertainment
         $entertainment_articles = ArticleNews::whereHas('category', function ($query) {
             $query->where('name', 'Entertainment');
         })
@@ -49,7 +50,44 @@ class FrontController extends Controller
             ->inRandomOrder()
             ->first();
 
+        // Sectional Business
+        $business_articles = ArticleNews::whereHas('category', function ($query) {
+            $query->where('name', 'Business');
+        })
+            ->where('is_featured', 'not_featured')
+            ->latest()
+            ->take(6)
+            ->get();
+
+        $business_featured_articles = ArticleNews::whereHas('category', function ($query) {
+            $query->where('name', 'Business');
+        })
+            ->where('is_featured', 'featured')
+            ->inRandomOrder()
+            ->first();
+        
+        // Sectional Automotive
+        $automotive_articles = ArticleNews::whereHas('category', function ($query) {
+            $query->where('name', 'Automotive');
+        })
+            ->where('is_featured', 'not_featured')
+            ->latest()
+            ->take(6)
+            ->get();
+
+        $automotive_featured_articles = ArticleNews::whereHas('category', function ($query) {
+            $query->where('name', 'Automotive');
+        })
+
+            ->where('is_featured', 'featured')
+            ->inRandomOrder()
+            ->first();
+
         return view('front.index', compact(
+            'automotive_featured_articles', 
+            'automotive_articles', 
+            'business_featured_articles',
+            'business_articles',
             'entertainment_featured_articles', 
             'entertainment_articles', 
             'categories', 
