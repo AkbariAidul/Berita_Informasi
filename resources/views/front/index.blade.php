@@ -197,9 +197,7 @@
 					Latest For You <br />
 					in Business
 				</h2>
-				<a href="{{ route('front.details', $article->slug)}}" class="font-bold text-4xl leading-[45px] text-white two-lines hover:underline transition-all duration-300">
-                                    {{ $article->name }}
-                                </a>
+				
 			</div>
 			<div class="flex justify-between items-center h-fit">
 				<div class="featured-news-card relative w-full h-[424px] flex flex-1 rounded-[20px] overflow-hidden">
