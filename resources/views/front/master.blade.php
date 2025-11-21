@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @stack('before-styles')
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+    <link rel="stylesheet" href="{{ asset('output.css') }}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+    @stack('after-styles')
+</head>
 
-        @stack ('before-styles')
-		<link href="{{asset('output.css')}}" rel="stylesheet" />
-		<link href="{{asset('main.css')}}" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-		
-        @stack ('after-styles')
-	</head>
+<body class="font-[Poppins] pb-[72px]">
 
     @yield('content')
 
-    @stack ('before-scripts')
+    @stack('before-scripts')
 
-    @stack ('after-scripts')
+    @stack('after-scripts')
+
+</body>
 
 </html>

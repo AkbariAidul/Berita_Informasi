@@ -144,6 +144,8 @@
 					Latest For You <br />
 					in Entertainment
 				</h2>
+
+				<a href="{{ route('front.category', 'Entertainment	')}}" class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">Explore All</a>
 				
 			</div>
 			<div class="flex items-center justify-between h-fit">
@@ -197,6 +199,8 @@
 					Latest For You <br />
 					in Business
 				</h2>
+
+				<a href="{{ route('front.category', 'Business')}}" class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">Explore All</a>
 				
 			</div>
 			<div class="flex justify-between items-center h-fit">
@@ -251,7 +255,7 @@
 					Latest For You <br />
 					in Automotive
 				</h2>
-				<a href="categoryPage.html" class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">Explore All</a>
+				<a href="{{ route('front.category', 'Automotive')}}" class="rounded-full p-[12px_22px] flex gap-[10px] font-semibold transition-all duration-300 border border-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18]">Explore All</a>
 			</div>
 			<div class="flex justify-between items-center h-fit">
 				<div class="featured-news-card relative w-full h-[424px] flex flex-1 rounded-[20px] overflow-hidden">
@@ -260,7 +264,7 @@
 					<div class="card-detail w-full flex items-end p-[30px] relative z-20">
 						<div class="flex flex-col gap-[10px]">
 							<p class="text-white">Featured</p>
-							<a href="{{ route('front.details', $automotive_featured_articles->slug)}}" class="font-bold text-[30px] leading-[36px] text-white hover:underline transition-all duration-300">Rela Tampil Menarik Depan Wanita, Pria Ini Jadi Bahan Bicaraan</a>
+							<a href="{{ route('front.details', $automotive_featured_articles->slug)}}" class="font-bold text-[30px] leading-[36px] text-white hover:underline transition-all duration-300">{{ substr($article->name, 0, 50) }}{{ strlen($article->name) > 50 ? '...':''}}</a>
 							<p class="text-white">{{ $automotive_featured_articles->created_at->format('M d,Y')}}</p>
 						</div>
 					</div>
