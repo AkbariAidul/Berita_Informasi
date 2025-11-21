@@ -45,6 +45,17 @@ class FrontController extends Controller
         $entertainment_featured_articles = ArticleNews::whereHas('category', function ($query) {
             $query->where('name', 'Entertainment');
         })
+        $business_articles = ArticleNews::whereHas('category', function ($query) {
+            $query->where('name', 'Business');
+        })
+            ->where('is_featured', 'not_featured')
+            ->latest()
+            ->take(6)
+            ->get();
+
+        $business_featured_articles = ArticleNews::whereHas('category', function ($query) {
+            $query->where('name', 'Business');
+        })
             ->where('is_featured', 'featured')
             ->inRandomOrder()
             ->first();
